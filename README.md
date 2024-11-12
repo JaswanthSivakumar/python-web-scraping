@@ -24,21 +24,33 @@ Ensure the following Python libraries are installed:
 
 # Project Structure
 
-### Explanation
+- `WebScraper` **class**: Handles data extraction, cleaning, and saving to SQLite.
+- `Dashboard` **class**: Generates an interactive dashboard for data visualization.
+- **Main Script**(`job` function): Coordinates the scraping, processing, and visualization tasks.
 
-- **data/**: Stores exported CSV data files.
-- **db/**: Contains the SQLite database (`population_data.db`) where cleaned data is stored.
-- **logs/**: Contains log files (like `scraping.log`) for tracking scraping and data processing activities.
-- **scripts/**: Stores modular scripts:
-  - `web_scraper.py`: Contains the `WebScraper` class for scraping and cleaning data.
-  - `database_manager.py`: Manages database creation and data insertion.
-  - `dashboard.py`: Contains the `Dashboard` class for generating data visualizations.
-- **main.py**: Main script to execute the entire data scraping, processing, and visualization pipeline.
-- **requirements.txt**: Lists required libraries; useful for setting up dependencies quickly.
-- **README.md**: Project documentation.
+  ## Usage
 
-### Note
+  1. Run the Script Once: The script scrapes data, processes it, saves it in a database, exports it as a CSV, and displays a dashboard.
+     `python your_script.py`.
+  2. Automate with Scheduling: By default, the script is set to run immediately. For scheduled scraping, use libraries like `schedule` or a task scheduler (e.g., cron).
 
-This structure can be modified based on your needs, especially if you want to keep everything in a single script. This modular approach is helpful for larger projects and easier maintenance.
+  ## Code Overview
 
-# Usage
+  ### WebScraper Class
+- `crape_webpage()`: Scrapes population data from the specified URL.
+- `clean_data()`: Cleans and formats data columns for accurate analysis.
+- `save_to_database()`: Stores data in an SQLite database.
+- `export_data()`: Exports the scraped data to `population_data.csv`.
+### Dashboard Class
+- `create_dashboard()`: Visualizes the population and yearly change using Plotly charts.
+### Example USAGE
+ This project uses population data from `'https://www.worldometers.info/world-population/population-by-country/'`
+ 
+## Logging
+ Logs are created for each major step (scraping, cleaning, saving, exporting, and visualizing), aiding in debugging and progress monitoring.
+
+ ## Future Enhancements
+- Add additional visualizations (e.g., top 10 populous countries).
+- Implement email notifications for data updates.
+- Schedule the scraping and analysis to run daily.
+ 
