@@ -28,15 +28,14 @@ Ensure the following Python libraries are installed:
 - `Dashboard` **class**: Generates an interactive dashboard for data visualization.
 - **Main Script**(`job` function): Coordinates the scraping, processing, and visualization tasks.
 
-  ## Usage
+## Usage
 
-  1. Run the Script Once: The script scrapes data, processes it, saves it in a database, exports it as a CSV, and displays a dashboard.
+1. Run the Script Once: The script scrapes data, processes it, saves it in a database, exports it as a CSV, and displays a dashboard.
      `python your_script.py`.
-  2. Automate with Scheduling: By default, the script is set to run immediately. For scheduled scraping, use libraries like `schedule` or a task scheduler (e.g., cron).
+2. Automate with Scheduling: By default, the script is set to run immediately. For scheduled scraping, use libraries like `schedule` or a task scheduler (e.g., cron).
+ ## Code Overview
 
-  ## Code Overview
-
-  ### WebScraper Class
+ ### WebScraper Class
 - `crape_webpage()`: Scrapes population data from the specified URL.
 - `clean_data()`: Cleans and formats data columns for accurate analysis.
 - `save_to_database()`: Stores data in an SQLite database.
