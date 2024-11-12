@@ -85,9 +85,7 @@ class Dashboard:
             return
         try:
             logging.info('Creating dashboard...')
-            # Create a bar plot showing population by country
             bar_fig = px.bar(self.dataframe, x='Country (or dependency)', y='Population (2024)', title='Population by Country in 2024')
-            # Create a line plot showing yearly change for each country
             line_fig = go.Figure(data=[
                 go.Scatter(x=self.dataframe['Country (or dependency)'], y=self.dataframe['Yearly Change'], mode='lines', name='Yearly Change')
             ])
