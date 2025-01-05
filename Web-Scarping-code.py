@@ -5,9 +5,6 @@ import plotly.express as px
 import plotly.graph_objs as go
 import logging
 import sqlite3
-from datetime import datetime
-import schedule
-import time
 
 class WebScraper:
     def __init__(self, url):
